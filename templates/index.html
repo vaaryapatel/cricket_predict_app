@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Naive Bayes Predictor</title>
+    <style>
+        body { font-family: Arial; padding: 40px; }
+        button { padding: 10px 20px; }
+        pre { background: #f4f4f4; padding: 15px; }
+    </style>
+</head>
+<body>
+
+<h2>Upload CSV File</h2>
+
+<form id="uploadForm">
+    <input type="file" name="file" required>
+    <br><br>
+    <button type="submit">Predict</button>
+</form>
+
+<h3>Output:</h3>
+<pre id="result">Waiting for prediction...</pre>
+
+<script>
+document.getElementById("uploadForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    let formData = new FormData(this);
+
+    let response = await fetch("/predict", {
+        method: "POST",
+        body: formData
+    });
+
+    let data = await response.json();
+    document.getElementById("result").textContent =
+        JSON.stringify(data, null, 2);
+});
+</script>
+
+</body>
+</html>
