@@ -164,17 +164,24 @@ html, body, [class*="css"] { font-family: 'Outfit', sans-serif; }
     text-transform: uppercase !important;
 }
 .stNumberInput input {
-    background: rgba(255,255,255,0.06) !important;
-    border: 1px solid rgba(255,255,255,0.1) !important;
+    background: #0d2016 !important;
+    border: 1px solid rgba(74,222,128,0.22) !important;
     border-radius: 12px !important;
     color: #e8f5ec !important;
+    -webkit-text-fill-color: #e8f5ec !important;
+    caret-color: #4ade80 !important;
     font-family: 'Outfit', sans-serif !important;
     font-size: 1.05rem !important;
     font-weight: 500 !important;
 }
 .stNumberInput input:focus {
-    border-color: rgba(74,222,128,0.5) !important;
+    background: #112a1a !important;
+    border-color: rgba(74,222,128,0.55) !important;
     box-shadow: 0 0 0 3px rgba(74,222,128,0.1) !important;
+    -webkit-text-fill-color: #e8f5ec !important;
+}
+.stNumberInput input::placeholder {
+    -webkit-text-fill-color: rgba(232,245,236,0.3) !important;
 }
 /* step buttons */
 .stNumberInput button {
